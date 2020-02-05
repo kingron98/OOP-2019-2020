@@ -11,7 +11,7 @@ public class Main
     
     public static void main(String[] arg)
     {
-        /*
+        
         System.out.println("Hello world!");
 
         Animal misty = new Dog(); // Polymorphism
@@ -20,10 +20,16 @@ public class Main
         misty.speak();  
         Cat topcat = new Cat();
         topcat.speak();
-        */
+        System.out.println(topcat.getNumLives());
 
-        Main main = new Main();
+        while(topcat.getNumLives() != -1)
+        {
+            topcat.kill();
+        }
+
+        /*Main main = new Main();
 		main.helloProcessing();
+        */
         
     }
 }
