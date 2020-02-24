@@ -77,24 +77,24 @@ public class Loops extends PApplet
 		// }
 
 		// nested circle loop // figure out even colors
-		float cSize = width * 0.1f;
-		float start = 25;
-		float size = 0;
-		float cColor = 255 / (((width / cSize) * (width / cSize)));
-		colorMode(HSB);
-		for(int i = 0; i < width / cSize; i++)
-		{
-			size = i * (width / cSize);
-			float x = (i * cSize) + start;
-			for(int j = 0; j < height / cSize; j++)
-			{
-				float y = (j * cSize) + start;
-				float c = (j * i * cColor + size) % 255;
-				fill(c, 255, 255);
-				circle(x, y, cSize);
-				size += (width / cSize);
-			}
-		}
+		// float cSize = width * 0.1f;
+		// float start = 25;
+		// float size = 0;
+		// float cColor = 255 / (((width / cSize) * (width / cSize)));
+		// colorMode(HSB);
+		// for(int i = 0; i < width / cSize; i++)
+		// {
+		// 	size = i * (width / cSize);
+		// 	float x = (i * cSize) + start;
+		// 	for(int j = 0; j < height / cSize; j++)
+		// 	{
+		// 		float y = (j * cSize) + start;
+		// 		float c = (j * i * cColor + size) % 255;
+		// 		fill(c, 255, 255);
+		// 		circle(x, y, cSize);
+		// 		size += (width / cSize);
+		// 	}
+		// }
 	}	
 
 
