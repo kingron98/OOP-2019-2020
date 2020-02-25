@@ -84,10 +84,8 @@ public class ArraysExample extends PApplet
 		for(int i = 0; i <= 150; i += 10)
 		{
 			float y = map(i, 0, 150, height - border, border);
-			textSize(12);
 			textAlign(RIGHT);
 			text(i, border, y);
-			stroke(255);
 			line(border + 4, y - 5, border + 8, y - 5);
 			if(i != 150)
 			{
@@ -98,16 +96,24 @@ public class ArraysExample extends PApplet
 
 		for(int i = 0; i < months.length; i ++)
 		{
-			float x = map(i, 0, months.length, border, width - border);
-			textSize(12);
+			float x = map(i, 0, months.length, border, width - border);			
 			textAlign(LEFT);
 			text(months[i], x, height - (border / 2));
-			stroke(255);
 			line(x + 8, height - border, x + 8, (height - border) - 4);
 			if(months.length - 1 != i)
 			{
 				line(x + 4, (height - border) - 5, x + ((height - border) / months.length) + 4, (height - border) - 5);
 			}
+		}
+
+		stroke(135, 206, 250);
+		for(int i = 0; i < months.length - 1; i ++)
+		{
+			float x = map(i, 0, months.length, border, width - border);
+			float y = map(rainFall[i], 0, 150, height - border, border);
+			float y2 = map(rainFall[(i + 1) % 11], 0, 150, height - border, border);
+
+			line(x + 8, y, x + ((height - border) / months.length) + 4, y2);
 		}
 	}
 
@@ -123,8 +129,9 @@ public class ArraysExample extends PApplet
 	{	
 		background(0);		
 		colorMode(HSB);	
-
-		// drawBarChart();
+		textSize(12);
+		stroke(255);
+		//drawBarChart();
 		drawTrendLine();
 	}
 }
